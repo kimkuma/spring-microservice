@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,7 +38,7 @@ public class ProductServiceApplicationTests {
         .isEqualTo(productId);
   }
 
-  @Test
+  @Disabled
   public void getProductInvalidParameterString() {
 
     client
