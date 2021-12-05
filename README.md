@@ -11,6 +11,6 @@
 docker-compose up -d
 ```
 
-#Spring Fox 를 이용한 API 문서
+## Spring Fox 를 이용한 API 문서
 * $HOST:$PORT/swagger-ui/ 로 접속
 ![Alt API](./SpringMicroservicesAPI.PNG)
