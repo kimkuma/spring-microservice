@@ -1,3 +1,46 @@
+api:
+  common:
+    version: 1.0.0
+    title: Spring microservice 샘플 API
+    description: Spring Fox를 이용한 샘플 API
+    termsOfServiceUrl: None
+    license: MIT
+    licenseUrl: None
+
+    contact:
+      name: Contact
+      url: https://kumaresume.duckdns.org/
+      email: kimkuma04@mail.com
+
+  product-composite:
+    get-composite-product:
+      description: 지정된 제품ID(product id)의 복합적인 정보를 반환한다.
+      notes: |
+        # 일반적인 응답
+        요청된 제품 ID가 발견되면 메서드는:
+        1. 기본제품정보 - Base product information
+        1. 이용후기 - Reviews
+        1. 권장사항 - Recommendations
+        1. Service Addresses\n(technical information regarding the addresses of the microservices that created the response)
+
+        # 예상되는 부분 및 오류 응답 
+        다음과 같은 경우 부분 응답만 생성됩니다.
+
+        ## 제품 ID(Product id) 113
+        200 - 확인, 그러나 권장사항은 없음.
+
+        ## 제품 ID(Product id)
+        200 - 확인, 그러나 이용후기는 없음.
+
+        ## 숫자가 아닌 제품 ID(product id)
+        400 - <b>Bad Request</b> 잘못된 요청이 리턴됨
+
+        ## 제품 ID(Product id) 13
+        404 - <b>Not Found</b> 가 리턴됨
+
+        ## 비정상적인 제품ID 들 
+        422 - <b>Unprocessable Entity</b> 가 리턴됨
+
 server.port: 7000
 server.error.include-message: always
 

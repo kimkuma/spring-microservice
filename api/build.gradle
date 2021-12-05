@@ -18,7 +18,7 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-group = 'se.magnus.microservices.api'
+group = 'com.kuma.microservices.api'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_1_8
 
@@ -28,6 +28,7 @@ repositories {
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-webflux')
+	implementation('io.springfox:springfox-swagger2:3.0.0')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
