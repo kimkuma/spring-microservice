@@ -1,12 +1,27 @@
 server:
   port: 7001
+  error:
+    include-message: always
 
 logging:
   level:
     root: INFO
     com.kuma.microservices: DEBUG
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: product-db
+
 ---
 spring:
   profiles: docker
+
+  data:
+    mongodb:
+      host: mongodb
+
 server:
   port: 8080
